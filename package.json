@@ -1,0 +1,44 @@
+{
+  "name": "cedict",
+  "preferGlobal": true,
+  "version": "0.0.1",
+  "author": "Lee Turner <lvturner@me.com",
+  "description": "A simple commandline Chinese dictionary application",
+  "contributors": [ 
+    {
+      "name": "Lee Turner",
+      "email": "lvturner@me.com"
+    } 
+  ],
+  "bin": {
+    "ghshell": "./cedict.js"
+  },
+  "main": "./cedict",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lvx3/cedict.git"
+  },
+  "homepage": "https://github.com/lvx3/cedict",
+  "keywords": [
+    "cli",
+    "cedict",
+    "chinese",
+    "english",
+    "dictionary",
+    "cc-cedict",
+    "repl"
+  ],
+  "dependencies" : {
+    "colors"   :  "*",
+    "sqlite3"   :  "*"
+  },
+  "analyze": false,
+  "devDependencies": {
+  },
+  "bundledDependencies": [
+  ],  
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.10"
+  }
+}
