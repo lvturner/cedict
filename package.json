@@ -2,7 +2,7 @@
   "name": "cedict",
   "preferGlobal": true,
   "version": "0.0.1",
-  "author": "Lee Turner <lvturner@me.com",
+  "author": "Lee Turner <lvturner@me.com>",
   "description": "A simple commandline Chinese dictionary application",
   "contributors": [ 
     {
