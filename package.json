@@ -11,7 +11,7 @@
     } 
   ],
   "bin": {
-    "ghshell": "./cedict.js"
+    "cedict": "./cedict.js"
   },
   "scripts": {
     "start": "node ./cedict"
