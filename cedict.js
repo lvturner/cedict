@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 var fs = require('fs');
 var colours = require('colours');
 var sqlite3 = require('sqlite3').verbose();
