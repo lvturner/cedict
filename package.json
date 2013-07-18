@@ -13,6 +13,9 @@
   "bin": {
     "ghshell": "./cedict.js"
   },
+  "scripts": {
+    "start": "node ./cedict"
+  },
   "main": "./cedict",
   "repository": {
     "type": "git",

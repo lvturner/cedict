@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 var fs = require('fs');
-var colours = require('colours');
+var colours = require('colors');
 var sqlite3 = require('sqlite3').verbose();
 var readline = require('readline');
 var http = require('http');
@@ -32,7 +32,11 @@ if(!fs.existsSync("cedict.sqlite3")) {
   });
   console.log("Downloading dictionary, please standby");
 } else if (process.argv.length > 2)  {
-  findDefinitions(process.argv[2]);
+  var search_string = "";
+  for(var i = 2;i<process.argv.length;i++) {
+    search_string += process.argv[i] + "%";
+  }
+  findDefinitions(search_string);
 } else {
   repl();
 }
@@ -79,9 +83,10 @@ function repl() {
 }
 
 function findDefinitions(line) {
+  line = line.replace(" ", "%");
   var db = new sqlite3.Database("cedict.sqlite3");
   var selector = line + "%";
-  db.each("SELECT traditional, simplified, pinyin, english FROM dict WHERE traditional LIKE ? OR simplified LIKE ? OR pinyin LIKE ? or english LIKE ? LIMIT 10", selector, selector, selector, "%" + selector, function(err, entry) {
+  db.each("SELECT traditional, simplified, pinyin, english FROM dict WHERE traditional LIKE ? OR simplified LIKE ? OR pinyin LIKE ? or english LIKE ? LIMIT 5", selector, selector, selector, "%" + selector, function(err, entry) {
     if(err) return;
     console.log();
     console.log(entry["simplified"] + " [ ".bold + entry["traditional"] + " ]".bold);
